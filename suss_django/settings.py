@@ -9,9 +9,12 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+from datetime import timedelta
+
 from dotenv import load_dotenv
 import os
 from pathlib import Path
+
 # 加载.env文件中的环境变量
 load_dotenv()
 
@@ -61,7 +64,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=14),  # Access token expiration time
+}
 ROOT_URLCONF = "suss_django.urls"
 
 TEMPLATES = [

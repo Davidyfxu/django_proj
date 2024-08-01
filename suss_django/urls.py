@@ -21,7 +21,7 @@ from django.conf import settings
 from todo_api import urls as todo_urls
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path('api/todos/', include(todo_urls)),
-    path('api/init/', include('user_api.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path("admin/", admin.site.urls),
+                  path('api/todos/', include(todo_urls)),
+                  path('api/users/', include('user_api.urls')),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
