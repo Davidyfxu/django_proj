@@ -30,6 +30,6 @@ def user_init(request):
     token = auth_header.split(' ')[-1] if auth_header else None
     user = validate_token(token)
     if user:
-        return Response({"name": user.username, "email": user.email, 'password': user.password},
+        return Response({"username": user.username, "email": user.email, 'password': user.password},
                         status=status.HTTP_200_OK)
     return Response({}, status=status.HTTP_400_BAD_REQUEST)
