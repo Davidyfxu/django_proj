@@ -32,4 +32,4 @@ def user_init(request):
     if user:
         return Response({"name": user.username, "email": user.email, 'password': user.password},
                         status=status.HTTP_200_OK)
-    return Response(123, status=status.HTTP_400_BAD_REQUEST)
+    return Response({}, status=status.HTTP_400_BAD_REQUEST)
