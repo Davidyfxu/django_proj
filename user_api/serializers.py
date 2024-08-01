@@ -52,5 +52,5 @@ class LoginSerializer(serializers.Serializer):
             # refresh用于更新accees，但前端暂时不用此方法
             # 'refresh': str(refresh),
             'token': str(access_token),
-            'user': user.username,
+            'username': user.username,
         }
