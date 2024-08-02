@@ -19,9 +19,13 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from todo_api import urls as todo_urls
+from read_api import urls as read_urls
+from discussion_api import urls as discussion_urls
 
 urlpatterns = [
                   path("admin/", admin.site.urls),
                   path('api/todos/', include(todo_urls)),
                   path('api/users/', include('user_api.urls')),
+                  path('api/reads/', include(read_urls)),
+                  path('api/discussions/', include(discussion_urls)),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

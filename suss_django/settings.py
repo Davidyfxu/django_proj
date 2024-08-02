@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "todo_api",
+    "read_api",
+    "discussion_api",
     "user_api"
 ]
 
